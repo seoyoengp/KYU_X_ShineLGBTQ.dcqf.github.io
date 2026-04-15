@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>대전퀴어문화축제 공동부스</title>
+  <style>
+    :root {
+      --bg: #151316;
+      --bg-soft: #221d22;
+      --card: #252026;
+      --text: #f7e8f1;
+      --sub: #dbb8cc;
+      --accent1: #ff4d9f;
+      --accent2: #ff7ab8;
+      --accent3: #ffc4e1;
+      --accent4: #ff94c7;
+      --accent5: #d9468f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 11% 9%, rgba(255, 95, 171, 0.2), transparent 36%),
+        radial-gradient(circle at 88% 16%, rgba(255, 148, 199, 0.16), transparent 40%),
+        linear-gradient(180deg, #1b171d 0%, #151316 100%);
+      min-height: 100vh;
+    }
+
+    .bg-orb {
+      position: fixed;
+      width: 28vmax;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      filter: blur(74px);
+      opacity: 0.28;
+      z-index: -1;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .orb-a {
+      background: rgba(255, 79, 163, 0.32);
+      top: -10vmax;
+      left: -8vmax;
+    }
+
+    .orb-b {
+      background: rgba(255, 143, 203, 0.3);
+      right: -8vmax;
+      top: 10vmax;
+      animation-delay: -6s;
+    }
+
+    .orb-c {
+      background: rgba(255, 189, 223, 0.32);
+      bottom: -12vmax;
+      left: 35%;
+      animation-delay: -12s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(2vmax, -2vmax) scale(1.07); }
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    .logo-connector {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+      padding: 8px 10px;
+      width: fit-content;
+      max-width: 100%;
+      border-radius: 999px;
+      background: rgba(255, 122, 190, 0.14);
+      border: 1px solid rgba(255, 176, 221, 0.45);
+      box-shadow: 0 8px 20px rgba(16, 12, 17, 0.35);
+    }
+
+    .logo-connector img {
+      display: block;
+      object-fit: contain;
+      opacity: 1;
+      filter: none;
+    }
+
+    .logo-youth {
+      width: clamp(86px, 12vw, 128px);
+      height: clamp(86px, 12vw, 128px);
+      background: #ffffff;
+      border-radius: 50%;
+      padding: 6px;
+      border: 1px solid rgba(255, 209, 236, 0.78);
+      box-shadow: 0 4px 12px rgba(10, 7, 10, 0.25);
+    }
+
+    .logo-binna {
+      width: clamp(86px, 12vw, 128px);
+      height: clamp(86px, 12vw, 128px);
+      border-radius: 50%;
+    }
+
+    .connector-x {
+      font-size: clamp(1.2rem, 2vw, 1.8rem);
+      font-weight: 900;
+      line-height: 1;
+      color: #ffd2e9;
+      text-shadow: none;
+    }
+
+    header {
+      padding: 98px 0 48px;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ff4fa3, #ff88c5);
+      color: #fff;
+      margin-bottom: 18px;
+      box-shadow: 0 0 22px rgba(255, 79, 163, 0.4);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3.7vw, 3.4rem);
+      line-height: 1.2;
+      margin-bottom: 18px;
+      text-wrap: balance;
+      color: #fff1f8;
+    }
+
+    .slogan {
+      font-weight: 800;
+      font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+      background: linear-gradient(90deg, #ff58ad, #ff8cc8, #ffe0f1, #ff8cc8, #eb61af);
+      background-size: 220% 220%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 20px;
+      animation: rainbowShift 9s linear infinite;
+    }
+
+    @keyframes rainbowShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    .lead {
+      color: var(--sub);
+      max-width: 740px;
+      font-size: 1.04rem;
+    }
+
+    .section {
+      padding: 22px 0 54px;
+    }
+
+    .section-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .tab-btn {
+      appearance: none;
+      border: 1px solid rgba(255, 203, 233, 0.45);
+      background: rgba(255, 140, 199, 0.14);
+      color: #ffeaf8;
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 160, 214, 0.28);
+      border-color: rgba(255, 167, 217, 0.75);
+    }
+
+    .tab-btn.is-active {
+      background: linear-gradient(90deg, rgba(255, 111, 187, 0.32), rgba(255, 183, 225, 0.3));
+      border-color: rgba(255, 167, 217, 0.84);
+      box-shadow: 0 8px 20px rgba(15, 10, 16, 0.35);
+    }
+
+    .section-panel {
+      display: none;
+    }
+
+    .section-panel.is-active {
+      display: block;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255, 177, 222, 0.42);
+      border-radius: 18px;
+      padding: 22px;
+      backdrop-filter: blur(6px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 199, 231, 0.65);
+      box-shadow: 0 14px 24px rgba(13, 10, 14, 0.35);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.12rem;
+      color: #ffeef8;
+    }
+
+    .card p {
+      color: var(--sub);
+      font-size: 0.96rem;
+    }
+
+    .highlight {
+      margin-top: 10px;
+      padding: 18px;
+      border-radius: 14px;
+      border-left: 5px solid var(--accent2);
+      background: rgba(255, 172, 218, 0.28);
+      color: #ffe2f0;
+      font-weight: 600;
+    }
+
+    .link-hub {
+      margin-top: 10px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 176, 221, 0.52);
+    }
+
+    .link-hub-title {
+      font-size: clamp(1.3rem, 2.3vw, 1.9rem);
+      line-height: 1.2;
+      margin-bottom: 8px;
+      color: #fff1f8;
+    }
+
+    .link-hub-copy {
+      color: var(--sub);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .donate-hero {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0 22px;
+    }
+
+    .btn-donate {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: min(560px, 100%);
+      padding: 18px 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 226, 244, 0.85);
+      background: linear-gradient(90deg, #ff4fa3, #ff8ac6 52%, #ff64b0);
+      color: #fff;
+      font-size: clamp(1.05rem, 2vw, 1.32rem);
+      font-weight: 900;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      box-shadow: 0 16px 30px rgba(15, 11, 16, 0.44);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn-donate:hover {
+      transform: translateY(-2px) scale(1.01);
+      filter: brightness(1.03);
+      box-shadow: 0 20px 36px rgba(15, 11, 16, 0.52);
+      opacity: 1;
+    }
+
+    .donation-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(10, 6, 10, 0.62);
+      backdrop-filter: blur(4px);
+      z-index: 50;
+    }
+
+    .donation-modal.is-open {
+      display: flex;
+    }
+
+    .donation-dialog {
+      width: min(640px, 96%);
+      background: #2b232a;
+      border: 1px solid rgba(255, 187, 226, 0.44);
+      border-radius: 18px;
+      padding: 20px 18px 16px;
+      box-shadow: 0 20px 34px rgba(8, 6, 8, 0.52);
+    }
+
+    .donation-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #fff1f8;
+    }
+
+    .donation-list {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .donation-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 10px 10px 12px;
+      border-radius: 12px;
+      background: rgba(255, 120, 187, 0.12);
+      border: 1px solid rgba(255, 205, 234, 0.36);
+      color: #ffe8f4;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      word-break: keep-all;
+    }
+
+    .donation-account {
+      font-size: 0.95rem;
+      padding-right: 4px;
+    }
+
+    .copy-account {
+      appearance: none;
+      border: 1px solid rgba(255, 170, 220, 0.7);
+      border-radius: 999px;
+      padding: 6px 11px;
+      background: rgba(255, 144, 204, 0.2);
+      color: #ffe8f4;
+      font-size: 0.82rem;
+      font-weight: 800;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .donation-close {
+      appearance: none;
+      border: 1px solid rgba(255, 213, 237, 0.55);
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: rgba(255, 154, 211, 0.2);
+      color: #fff3fa;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .link-actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 11px 18px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.9;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #ff4fa3, #ff95cd);
+      color: white;
+      box-shadow: 0 12px 26px rgba(255, 79, 163, 0.42);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 166, 215, 0.22);
+      border: 1px solid rgba(255, 196, 230, 0.48);
+      color: #ffeaf6;
+    }
+
+    .btn-link {
+      display: block;
+      width: 100%;
+      text-align: left;
+      border-radius: 999px;
+      padding: 14px 22px;
+      background: linear-gradient(90deg, rgba(255, 93, 176, 0.27), rgba(255, 164, 215, 0.2));
+      border: 1px solid rgba(255, 210, 237, 0.56);
+      box-shadow: 0 8px 18px rgba(16, 12, 17, 0.28);
+      color: #fff4fb;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 227, 243, 0.88);
+      box-shadow: 0 12px 24px rgba(16, 12, 17, 0.34);
+      opacity: 1;
+    }
+
+    .link-title {
+      display: block;
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+
+    .link-desc {
+      display: block;
+      font-size: 0.9rem;
+      color: #ffd9ed;
+    }
+
+    footer {
+      padding: 26px 0 34px;
+      color: #ddb8cc;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 177, 222, 0.36);
+      margin-top: 30px;
+    }
+
+    .contact-block {
+      margin-top: 20px;
+      padding: 18px 0 8px;
+      border-top: 1px solid rgba(255, 177, 222, 0.36);
+    }
+
+    .contact-block h3 {
+      font-size: 1.06rem;
+      color: #fff1f8;
+      margin-bottom: 8px;
+    }
+
+    .contact-item {
+      color: var(--sub);
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .contact-item a {
+      color: #ffe2f1;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding-top: 76px;
+      }
+
+      .logo-connector {
+        gap: 10px;
+        padding: 8px 10px;
+      }
+
+      .logo-youth {
+        width: 74px;
+        height: 74px;
+      }
+
+      .logo-binna {
+        width: 74px;
+        height: 74px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+  <div class="bg-orb orb-c"></div>
+
+  <header class="container">
+    <div class="logo-connector" aria-label="전국청소년노동조합과 빛나는우리청소년성소수자모임 공동 로고">
+      <img class="logo-youth" src="./assets/logo-youth-labor.png" alt="전국청소년노동조합 로고" />
+      <span class="connector-x" aria-hidden="true">×</span>
+      <img class="logo-binna" src="./assets/logo-binna.png" alt="빛나는우리청소년성소수자모임 로고" />
+    </div>
+    <span class="badge">2026 대전퀴어문화축제 공동부스</span>
+    <h1>전국청소년노동조합 × 빛나는우리청소년성소수자모임</h1>
+    <p class="slogan">학교에도, 일터에도, 어디에도 무지개는 뜬다.</p>
+    <p class="lead">
+      청소년의 노동권과 성소수자 인권은 떨어진 의제가 아닙니다.
+      우리는 학교와 일터, 그리고 일상의 모든 공간에서 존엄하고 안전하게 살아갈 권리를 이야기합니다.
+      대전퀴어문화축제 공동부스에서 함께 목소리를 모아주세요.
+    </p>
+  </header>
+
+  <main class="container">
+    <div class="donate-hero">
+      <button class="btn-donate" type="button" id="openDonationModal" aria-label="후원 계좌 정보 열기">
+        후원하기
+      </button>
+    </div>
+
+    <nav class="section-tabs" aria-label="페이지 섹션 전환">
+      <button class="tab-btn is-active" type="button" data-target="about">부스 소개</button>
+      <button class="tab-btn" type="button" data-target="links">단체 링크</button>
+    </nav>
+
+    <section class="section section-panel is-active" data-section="about">
+      <div class="grid">
+        <article class="card">
+          <h3>공동부스 소개</h3>
+          <p>
+            전국청소년노동조합과 빛나는우리청소년성소수자모임이 함께 만드는 연대의 공간입니다.
+            서로의 경험을 듣고, 연결되고, 다음 행동을 고민합니다.
+          </p>
+        </article>
+        <article class="card">
+          <h3>무엇을 하나요?</h3>
+          <p>
+            현장 대화, 참여형 캠페인, 자료 배포를 통해 청소년 노동권과 성소수자 인권 이슈를 쉽고 선명하게 나눕니다.
+          </p>
+        </article>
+        <article class="card">
+          <h3>누가 함께하나요?</h3>
+          <p>
+            청소년, 청년, 교사, 활동가, 지역 시민 누구나 환영합니다.
+            지지와 연대의 마음만 있다면 모두가 동료입니다.
+          </p>
+        </article>
+      </div>
+      <p class="highlight">
+        "학교에도, 일터에도, 어디에도 무지개는 뜬다."
+        이 슬로건은 우리 삶의 모든 자리에서 차별 없는 권리를 요구하는 선언입니다.
+      </p>
+    </section>
+
+    <section class="section link-hub section-panel" data-section="links">
+      <h3 class="link-hub-title">단체 링크</h3>
+      <p class="link-hub-copy">각 단체 소식과 활동 정보는 아래 링크에서 확인할 수 있습니다.</p>
+      <div class="link-actions">
+        <a class="btn btn-link" href="https://x.com/KRYouthUnion" target="_blank" rel="noopener noreferrer" aria-label="전청노 트위터 사이트 열기">
+          <span class="link-title">전청노 트위터(X)</span>
+          <span class="link-desc">실시간 공지와 현장 소식을 빠르게 확인하세요.</span>
+        </a>
+        <a class="btn btn-link" href="https://www.bichcheongmo.org/" target="_blank" rel="noopener noreferrer" aria-label="빛청모 홈페이지 열기">
+          <span class="link-title">빛청모 홈페이지</span>
+          <span class="link-desc">단체 소개, 활동공유, 문의와 후원 정보를 확인하세요.</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <section class="container contact-block" aria-label="연락처">
+    <h3>연락처</h3>
+    <p class="contact-item">
+      빛청모:
+      <a href="tel:07079538302">070-7953-8302</a>
+      /
+      <a href="mailto:jenaeon3@gmail.com">jenaeon3@gmail.com</a>
+    </p>
+    <p class="contact-item">
+      청소년노조:
+      <a href="tel:01048850331">010-4885-0331</a>
+      /
+      <a href="mailto:koreanyouthunion@gmail.com">koreanyouthunion@gmail.com</a>
+    </p>
+  </section>
+
+  <footer class="container">
+    대전퀴어문화축제 공동부스 | 전국청소년노동조합 · 빛나는우리청소년성소수자모임
+  </footer>
+
+  <div class="donation-modal" id="donationModal" aria-hidden="true">
+    <div class="donation-dialog" role="dialog" aria-modal="true" aria-labelledby="donationModalTitle">
+      <h3 class="donation-title" id="donationModalTitle">후원 계좌 안내</h3>
+      <div class="donation-list">
+        <div class="donation-item">
+          <span class="donation-account">678-20-291639 SC제일은행 (이준원)</span>
+          <button class="copy-account" type="button" data-copy="678-20-291639 SC제일은행 (이준원)">복사</button>
+        </div>
+        <div class="donation-item">
+          <span class="donation-account">112-2355-4286-02 BNK부산은행 (이준원)</span>
+          <button class="copy-account" type="button" data-copy="112-2355-4286-02 BNK부산은행 (이준원)">복사</button>
+        </div>
+        <div class="donation-item">
+          <span class="donation-account">1002-165-048519 우리은행 (이준원)</span>
+          <button class="copy-account" type="button" data-copy="1002-165-048519 우리은행 (이준원)">복사</button>
+        </div>
+      </div>
+      <button class="donation-close" type="button" id="closeDonationModal">닫기</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tabButtons = document.querySelectorAll(".tab-btn");
+      const panels = document.querySelectorAll(".section-panel");
+      const modal = document.getElementById("donationModal");
+      const openModalButton = document.getElementById("openDonationModal");
+      const closeModalButton = document.getElementById("closeDonationModal");
+      const copyButtons = document.querySelectorAll(".copy-account");
+
+      function activate(target) {
+        tabButtons.forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.target === target);
+        });
+
+        panels.forEach((panel) => {
+          panel.classList.toggle("is-active", panel.dataset.section === target);
+        });
+      }
+
+      tabButtons.forEach((button) => {
+        button.addEventListener("click", () => activate(button.dataset.target));
+      });
+
+      function openModal() {
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+      }
+
+      function closeModal() {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+      }
+
+      openModalButton.addEventListener("click", openModal);
+      closeModalButton.addEventListener("click", closeModal);
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) closeModal();
+      });
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal.classList.contains("is-open")) {
+          closeModal();
+        }
+      });
+
+      async function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return;
+        }
+
+        const temp = document.createElement("textarea");
+        temp.value = text;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        document.body.removeChild(temp);
+      }
+
+      copyButtons.forEach((button) => {
+        button.addEventListener("click", async () => {
+          const original = button.textContent;
+          try {
+            await copyText(button.dataset.copy || "");
+            button.textContent = "복사됨";
+          } catch (error) {
+            button.textContent = "실패";
+          }
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1200);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
